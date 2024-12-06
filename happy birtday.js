@@ -3,7 +3,7 @@ window.onload = function() {
   music.play();
   
   // Wait a moment to ensure the autoplay starts, then unmute
-  setTimeout(function() {
+  setTimeout(() => {
     music.muted = false; // Unmute the music
   }, 100); // Set a short delay, like 100ms
 };
