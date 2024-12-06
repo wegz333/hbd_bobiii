@@ -1,11 +1,12 @@
 window.onload = function() {
   var music = document.getElementById("bg-music");
-  music.play();
-  
-  // Wait a moment to ensure the autoplay starts, then unmute
-  setTimeout(() => {
-    music.muted = false; // Unmute the music
-  }, 100); // Set a short delay, like 100ms
+  music.play().then(() => {
+    // Automatically unmute after a successful play attempt
+    music.muted = false;
+  }).catch((error) => {
+    console.error("Music playback failed:", error);
+    // Handle the error (you can prompt the user for manual action)
+  });
 };
 
 let w = (c.width = window.innerWidth),
