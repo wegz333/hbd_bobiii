@@ -1,17 +1,12 @@
-<script>
-  window.onload = function () {
-    var music = document.getElementById("bg-music");
-
-    // Try to autoplay music after user interaction
-    document.getElementById('playMusicBtn').addEventListener('click', function () {
-      music.play().then(() => {
-        console.log("Music started successfully!");
-      }).catch((error) => {
-        console.error("Error playing music:", error);
-      });
-    });
-  };
-</script>
+window.onload = function() {
+  var music = document.getElementById("bg-music");
+  music.play();
+  
+  // Wait a moment to ensure the autoplay starts, then unmute
+  setTimeout(function() {
+    music.muted = false; // Unmute the music
+  }, 100); // Set a short delay, like 100ms
+};
 
 let w = (c.width = window.innerWidth),
   h = (c.height = window.innerHeight),
