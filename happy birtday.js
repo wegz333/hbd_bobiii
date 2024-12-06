@@ -1,13 +1,17 @@
-window.onload = function() {
-  var music = document.getElementById("bg-music");
-  music.play().then(() => {
-    // Automatically unmute after a successful play attempt
-    music.muted = false;
-  }).catch((error) => {
-    console.error("Music playback failed:", error);
-    // Handle the error (you can prompt the user for manual action)
-  });
-};
+<script>
+  window.onload = function () {
+    var music = document.getElementById("bg-music");
+
+    // Try to autoplay music after user interaction
+    document.getElementById('playMusicBtn').addEventListener('click', function () {
+      music.play().then(() => {
+        console.log("Music started successfully!");
+      }).catch((error) => {
+        console.error("Error playing music:", error);
+      });
+    });
+  };
+</script>
 
 let w = (c.width = window.innerWidth),
   h = (c.height = window.innerHeight),
